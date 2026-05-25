@@ -2837,3 +2837,36 @@ input[type="date"] {
     width: 100%;
   }
 }
+
+
+/* =========================================================
+   LESS-CARDS ARCHITECTURE OVERRIDE
+   ========================================================= */
+:root { --workspace-max: 1040px; --flow-max: 720px; }
+.app { max-width: var(--workspace-max); }
+.top-panel.active { animation: workspaceFade .16s ease-out; }
+@keyframes workspaceFade { from { opacity: .72; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+.chart-card, .form-card, .filter-card, .auth-card { box-shadow: none; }
+#finance-dashboard .chart-card, #finance-history .filter-card, #finance-budgets .chart-card, #finance-subs .form-card, #finance-subs .sub-card, #gas-dashboard .chart-card, #gas-history .filter-card, #gas-log .form-card, #tab-chat .chart-card, #tab-settings .chart-card { border-color: color-mix(in srgb, var(--border), transparent 35%); }
+.filter-card.collapsed, .history-filter-card.collapsed { padding-top: 12px; padding-bottom: 12px; background: transparent; }
+#finance-add.guided-add-panel { max-width: var(--flow-max); margin: 0 auto; padding-bottom: 96px; }
+#finance-add.guided-add-panel .form-card { background: transparent; border: 0; padding: 0; margin-bottom: 12px; }
+#finance-add.guided-add-panel .section-title { margin-bottom: 8px; }
+#finance-add.guided-add-panel #finance-expense-form { display: grid; gap: 12px; }
+#finance-add.guided-add-panel .form-row, #finance-add.guided-add-panel .form-row.three { grid-template-columns: 1fr; gap: 12px; margin-bottom: 0; }
+#finance-add.guided-add-panel .flow-block { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 16px; transition: border-color .16s ease, box-shadow .16s ease, opacity .16s ease, transform .16s ease; }
+#finance-add.guided-add-panel .flow-block.flow-active { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(232,200,64,.14); }
+#finance-add.guided-add-panel .flow-block.flow-complete:not(.flow-active) { opacity: .86; }
+.flow-summary-line { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+#finance-add.guided-add-panel #fin-step-extras { background: transparent; border-style: dashed; }
+#finance-add.guided-add-panel .tap-to-add-row, #finance-add.guided-add-panel .items-toggle-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+#finance-add.guided-add-panel .tap-to-add-btn, #finance-add.guided-add-panel .items-toggle-label { border-radius: 999px; background: var(--surface2); border: 1px solid var(--border); padding: 8px 12px; min-height: 38px; }
+#finance-add.guided-add-panel .return-link-card { background: transparent; border-style: dashed; }
+.guided-save-bar { position: sticky; bottom: 12px; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 16px; padding: 12px 14px; background: color-mix(in srgb, var(--surface), transparent 4%); border: 1px solid var(--border); border-radius: 18px; box-shadow: 0 14px 40px rgba(0,0,0,.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.guided-save-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+.guided-save-summary { font-size: 13px; color: var(--text); font-weight: 650; max-width: 440px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.guided-save-btn[disabled] { opacity: .45; cursor: not-allowed; }
+#finance-add.guided-add-panel #fin-step-save { display: none !important; }
+#finance-add.guided-add-panel .form-input, #finance-add.guided-add-panel .form-select { min-height: 44px; border-radius: 12px; }
+#finance-recent-card { max-width: var(--flow-max); margin-left: auto; margin-right: auto; background: transparent; border-style: dashed; }
+@media (max-width: 760px) { .app { padding-left: 12px; padding-right: 12px; } #finance-add.guided-add-panel .flow-block { padding: 14px; border-radius: 16px; } .guided-save-bar { bottom: 8px; border-radius: 16px; } .guided-save-summary { max-width: 190px; } .guided-save-btn { padding-left: 14px; padding-right: 14px; } .chart-card, .form-card, .filter-card { padding: 1rem; } }

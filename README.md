@@ -1,9 +1,3 @@
-# Finance + Gas Tracker
+# Finance + Gas Tracker - Full Code
 
-Upload these files to your GitHub Pages repo root:
-
-- index.html
-- styles.css
-
-Important:
-index.html now links to styles.css, not styles_guided.css.
+Upload all files to your GitHub Pages repo root. This keeps the existing Supabase/localStorage data model and all original functions, while adding a less-crowded guided Add Transaction UI.
