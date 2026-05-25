@@ -1,11 +1,9 @@
 # Finance + Gas Tracker
 
-Use these two files for GitHub Pages:
+Upload these files to your GitHub Pages repo root:
 
 - index.html
 - styles.css
 
-This version keeps the JavaScript embedded in index.html, matching the original app structure.
-There is no separate app.js required.
-
-Deploy by uploading/replacing both files in your GitHub repo.
+Important:
+index.html now links to styles.css, not styles_guided.css.
